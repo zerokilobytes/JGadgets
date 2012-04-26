@@ -5,4 +5,4 @@ var Logger = function(){
 	};
 };
 
-log = new Logger();
+$log = new Logger();

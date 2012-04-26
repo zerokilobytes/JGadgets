@@ -3,17 +3,14 @@
  * Copyright (C) 2011-2012 Markel Mairs
  * GNU General Public Version 2 License
  */
-
+alert("Application!");
 var Application = function(container, options){
 	var $window = null;
 	var $panel = null;
 	var $this = this;
 
 	this.start = function() {
-		$panel = $(container);
-		_render();
-		options.init();
-		return $this;
+		
 	};
 
 	this.close = function() {
@@ -27,19 +24,18 @@ var Application = function(container, options){
 	};
 
 	this.registerComponent = function(component){
-		log.write("Registered component " + component.type);
-		log.write("Html 1" + $($panel).html());
 	};
 	
 	this.registerWindow = function(windowPanel){
-		log.write("Html ***" + $($panel).html());
-		//windowPanel.setPanel($panel);
-		//attachWindow(windowPanel);
-		log.write("Registered window! " + windowPanel.type);
+		windowPanel.setPanel($panel);
+		$window = windowPanel;
 	};
 
-	var Bootstrap = function (object) {
-
+	this.Bootstrap = function (object) {
+		$panel = $(container);
+		_render();
+		options.init();
+		return $this;
     };
 
     function attachWindow(windowPanel){
@@ -59,9 +55,7 @@ var Application = function(container, options){
 			$panel.width($(window).width());
 			$panel.height($(window).height());
 		});
-		log.write($panel + " Css Set!");
-		log.write("Html 1" + $($panel).html());
 	}
-	Bootstrap($this);
+	this.Bootstrap($this);
 	return $this;
 };

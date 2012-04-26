@@ -1,11 +1,23 @@
 (function($){
+	
+	
+	alert("Main");
+	
+	alert("L");
+	//application = new Application();
+	
+	
+	
 	application = new Application($("#desktop"), {
 			init: function(){
-				log.write("Application started!");
+				//$log.write("Application started!");
 			}
 		}
 	);
-	application.start();
+	alert("T");
+	
 	application.registerWindow(new DesktopPlugin());
 	application.registerComponent(new TaskbarPlugin());
+	application.start();
+	alert("E");
 })(jQuery);

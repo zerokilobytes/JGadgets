@@ -3,7 +3,7 @@
  * Copyright (C) 2011-2012 Markel Mairs
  * GNU General Public Version 2 License
  */
-
+alert("Model!");
 (function(window){
   var Model = function() {
     return Model.Object.create(arguments[0]);
