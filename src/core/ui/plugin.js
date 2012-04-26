@@ -4,8 +4,8 @@
  * GNU General Public Version 2 License
  */
 
-var Component = $model({
-	type: 'Component',
+var Plugin = $model({
+	type: 'Plugin',
 	init: function(){
 	}
 });

@@ -5,7 +5,7 @@
  */
 
 var TaskbarPlugin = $model({
-	extend: Component,
+	extend: Plugin,
 	type: 'TaskbarPlugin',
 	init: function(){
 	}

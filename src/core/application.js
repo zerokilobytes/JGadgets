@@ -28,11 +28,14 @@ var Application = function(container, options){
 
 	this.registerComponent = function(component){
 		log.write("Registered component " + component.type);
+		log.write("Html 1" + $($panel).html());
 	};
 	
 	this.registerWindow = function(windowPanel){
-		attachWindow(windowPanel);
-		log.write("Registered window " + windowPanel.type);
+		log.write("Html ***" + $($panel).html());
+		//windowPanel.setPanel($panel);
+		//attachWindow(windowPanel);
+		log.write("Registered window! " + windowPanel.type);
 	};
 
 	var Bootstrap = function (object) {
@@ -57,6 +60,7 @@ var Application = function(container, options){
 			$panel.height($(window).height());
 		});
 		log.write($panel + " Css Set!");
+		log.write("Html 1" + $($panel).html());
 	}
 	Bootstrap($this);
 	return $this;

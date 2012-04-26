@@ -7,7 +7,11 @@
 var DesktopPlugin = $model({
 	extend: Window,
 	type: 'DesktopPlugin',
-	init: function(){
+	$panel : null,
+	setPanel: function(panel){
+	$panel = panel;
+	//this.$super.init.apply(this, arguments);
 	log.write("Desktop loaded!");
+	log.write("Panel @" + $(this.$panel.html()));
 	}
 });
