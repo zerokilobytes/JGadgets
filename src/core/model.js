@@ -6,11 +6,11 @@
 
 (function(window){
   var Model = function() {
-    return Model.Base.create(arguments[0]);
+    return Model.Object.create(arguments[0]);
   };
-  var Model_TYPE_ALL = '1';
-  var Model_TYPE_PROPERTY = '2';
-  var Model_TYPE_METHOD = '3';
+  var Model_TYPE_ALL 		= '1';
+  var Model_TYPE_PROPERTY 	= '2';
+  var Model_TYPE_METHOD 	= '3';
 
   
   
@@ -65,7 +65,7 @@
     return destination;
   }
 
-  Model.Base = (function(){
+  Model.Object = (function(){
     function factory() {
       return function() {
         this.init.apply(this, arguments);
@@ -190,9 +190,33 @@
     function typeName(object) {
       return typeof object;
     }
+    
+    function isArray() {
+		if (typeof arguments[0] == 'object'){  
+			var criterion = arguments[0].constructor.toString().match(/array/i); 
+			return (criterion != null);  
+		}
+    	return false;
+    }
 
     function isNumeric(object) {
       return !!(!isNaN(object));
+    }
+    
+    function isString(){
+    	if (typeof arguments[0] == 'string')
+    	return true;
+
+    	if(typeof arguments[0] == 'object'){
+    		var criterion = arguments[0].constructor.toString().match(/string/i); 
+    		return (criterion != null); 
+    	}
+
+    	return false;
+    }
+
+    function isObject(){
+    	return (typeof arguments[0] == 'object');
     }
 
     extend(Model, {

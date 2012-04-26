@@ -5,6 +5,14 @@
  */
 
 var Window = $model({
-	init: function(){
+	type: 'Window',
+	panel: null,
+	init: function($panel){
+		panel = $panel;
+		log.write("Window loaded!");
+	},
+
+	addChild: function(child){
+		
 	}
 });

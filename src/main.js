@@ -6,6 +6,6 @@
 		}
 	);
 	application.start();
-	application.registerComponent("ui.window");
-	application.registerComponent("ui.taskbar");
+	application.registerWindow(new DesktopPlugin());
+	application.registerComponent(new TaskbarPlugin());
 })(jQuery);

@@ -5,48 +5,59 @@
  */
 
 var Application = function(container, options){
-	var panel = null;
-	
+	var $window = null;
+	var $panel = null;
+	var $this = this;
+
 	this.start = function() {
-		panel = $(container);
+		$panel = $(container);
 		_render();
 		options.init();
-		return this;
+		return $this;
 	};
-	
+
 	this.close = function() {
 		options.close();
-		return this;
+		return $this;
 	};
-	
+
 	this.exit = function() {
 		options.exit();
-		return this;
+		return $this;
+	};
+
+	this.registerComponent = function(component){
+		log.write("Registered component " + component.type);
 	};
 	
-	this.register = function(component){
-		
+	this.registerWindow = function(windowPanel){
+		attachWindow(windowPanel);
+		log.write("Registered window " + windowPanel.type);
 	};
-	
+
 	var Bootstrap = function (object) {
 
     };
-	
+
+    function attachWindow(windowPanel){
+    	//$this.registerComponent($window);
+    }
+
 	function _register(){
 		
 	}
-	function _render(container){
+	function _render(){
 		$("body").css("overflow", "hidden");
-		panel.css('background-color', 'green');
-		panel.width($(window).width());
-		panel.height($(window).height());
+		$panel.css('background-color', 'green');
+		$panel.width($(window).width());
+		$panel.height($(window).height());
 		
 		$(window).resize(function() {
-			panel.width($(window).width());
-			panel.height($(window).height());
+			$panel.width($(window).width());
+			$panel.height($(window).height());
 		});
-		log.write(container + " Css Set!");
+		log.write($panel + " Css Set!");
 	}
-	Bootstrap(this);
-	return this;
+	Bootstrap($this);
+	return $this;
 };
