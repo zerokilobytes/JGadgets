@@ -6,7 +6,6 @@
 
 var Notes = $model({
 	init: function(){
-		alert("Hello");
+		alert("Hello note");
 	}
 });
-note = new Notes('Title', 'This is a message');

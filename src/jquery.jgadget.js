@@ -7,7 +7,7 @@
  */
 
 (function( $ ){
-  $.fn.tooltip = function( options ) {  
+  $.fn.gadget = function( options ) {  
 
     // Create some defaults, extending them with any options that were provided
     var settings = $.extend( {}, options);
@@ -17,4 +17,4 @@
   };
 })( jQuery );
 
-$('div').tooltip({});
+$('div').gadget({});
