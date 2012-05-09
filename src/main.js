@@ -1,3 +1,5 @@
+console.log(/^Plugins.\w+$/.test("Plugins.Desktop"));
+
 var APPLICATION_PATH = "../src";
 
 (function($){
@@ -7,10 +9,9 @@ var APPLICATION_PATH = "../src";
 	require("Core.UI.Window");
 	require("Core.UI.Plugin");
 	
-	require("Plugins.Desktop.Script");
-	require("Plugins.Taskbar.Script");
-	require("Plugins.Taskbar.Script");
-	require("Plugins.Taskbar.Script");
+	require("Plugins.Desktop");
+	require("Plugins.Taskbar");
+	require("Plugins.Taskbar");
 
 	application = new Application($("#desktop"), {
 			init: function(){

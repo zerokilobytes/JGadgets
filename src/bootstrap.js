@@ -14,10 +14,13 @@ function require(component){
 		$log.write("Required " + component);
 		return true;
 	}
-	$log.write("Could not required " + component + ". Component already required.");
+	$log.write("Could not required '" + component + "'. Component already required.");
 	return false;
 }
  function getpath(component){
+	if(/^Plugins.\w+$/.test(component)){
+		component = component + ".Script";
+	}
 	component = component.replace(/\./g, "/");
 	return component + '.js';
 };
