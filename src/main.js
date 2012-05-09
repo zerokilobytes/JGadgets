@@ -1,3 +1,5 @@
+var APPLICATION_PATH = "../src";
+
 (function($){
 	$.getScript("../src/bootstrap.js", function(){
 
@@ -6,6 +8,8 @@
 	require("Core.UI.Plugin");
 	
 	require("Plugins.Desktop.Script");
+	require("Plugins.Taskbar.Script");
+	require("Plugins.Taskbar.Script");
 	require("Plugins.Taskbar.Script");
 
 	application = new Application($("#desktop"), {

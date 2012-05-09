@@ -1,26 +1,33 @@
-var APPLICATION_PATH = "../src";
-$imports = new Array();
+var $imports = new Array();
 
 function include(component){
 	var path = getpath(component);
 	$bootstrap.includeScript(APPLICATION_PATH + "/" + path);
+	$log.write("included " + component);
 }
+
 function require(component){
-	var path = getpath(component);
-	$imports.push({name: component, path:path, loaded: true});
-	$bootstrap.getScript(APPLICATION_PATH + "/" + path);
+	if(!component_loaded(component)){
+		var path = getpath(component);
+		$imports.push({name: component, path:path, loaded: true});
+		$bootstrap.getScript(APPLICATION_PATH + "/" + path);
+		$log.write("Required " + component);
+		return true;
+	}
+	$log.write("Could not required " + component + ". Component already required.");
+	return false;
 }
  function getpath(component){
 	component = component.replace(/\./g, "/");
 	return component + '.js';
 };
-function start(){
-	$.each($imports, function(index, value) {
-		$bootstrap.getScript(APPLICATION_PATH + "/" + value.path, function(){
-			value.loaded = true;
-			$log.write(value.name);
-		});
-	});
+function component_loaded(component){
+	for (var i = 0; i < $imports.length; i++) {
+		if($imports[i].name == component){
+			return true;
+		}
+	}
+	return false;
 }
 (function($){
 
