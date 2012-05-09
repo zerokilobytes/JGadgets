@@ -15,4 +15,3 @@ var Loader = function(){
 	};
 };
 $loader = new Loader();
-$bootstrap.init();

@@ -1,4 +1,6 @@
 (function($){
+	$.getScript("../src/bootstrap.js", function(){
+
 	require("Core.Application");
 	require("Core.UI.Window");
 	require("Core.UI.Plugin");
@@ -20,4 +22,6 @@
 	application.registerComponent(new TaskbarPlugin());
 	application.start();
 	$log.write("E3");
+	
+	});
 })(jQuery);
