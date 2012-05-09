@@ -67,7 +67,7 @@ function start(){
 			    success:callback,
 			    dataType:'script',
 			    error: function(xhr, textStatus, errorThrown) {
-			        // Look at the `textStatus` and/or `errorThrown` properties.
+			        
 			    }
 			});
 		};
