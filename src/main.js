@@ -1,23 +1,23 @@
 (function($){
+	require("Core.Application");
+	require("Core.UI.Window");
+	require("Core.UI.Plugin");
 	
-	
-	alert("Main");
-	
-	alert("L");
-	//application = new Application();
-	
-	
-	
+	require("Plugins.Desktop.Script");
+	require("Plugins.Taskbar.Script");
+
 	application = new Application($("#desktop"), {
 			init: function(){
 				//$log.write("Application started!");
 			}
 		}
 	);
-	alert("T");
-	
+	//$log.write(jQuery.isReady);
+	//alert("E0");
+	//alert(jQuery.isReady);
 	application.registerWindow(new DesktopPlugin());
+
 	application.registerComponent(new TaskbarPlugin());
 	application.start();
-	alert("E");
+	$log.write("E3");
 })(jQuery);

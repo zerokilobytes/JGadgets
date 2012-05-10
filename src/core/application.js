@@ -3,7 +3,7 @@
  * Copyright (C) 2011-2012 Markel Mairs
  * GNU General Public Version 2 License
  */
-alert("Application!");
+
 var Application = function(container, options){
 	var $window = null;
 	var $panel = null;

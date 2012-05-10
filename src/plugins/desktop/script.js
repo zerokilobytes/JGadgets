@@ -9,9 +9,9 @@ var DesktopPlugin = $model({
 	type: 'DesktopPlugin',
 	$panel : null,
 	setPanel: function(panel){
-		this.$panel = panel;
+		//this.$panel = panel;
 	
-		log.write("Desktop loaded!");
-		log.write("Panel @" + this.$panel.html());
+		//log.write("Desktop loaded!");
+		//log.write("Panel @" + this.$panel.html());
 	}
 });
