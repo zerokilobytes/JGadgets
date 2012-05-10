@@ -1,5 +1,3 @@
-console.log(/^Plugins.\w+$/.test("Plugins.Desktop"));
-
 var APPLICATION_PATH = "../src";
 
 (function($){
@@ -19,14 +17,12 @@ var APPLICATION_PATH = "../src";
 			}
 		}
 	);
-	//$log.write(jQuery.isReady);
-	//alert("E0");
-	//alert(jQuery.isReady);
+
 	application.registerWindow(new DesktopPlugin());
 
 	application.registerComponent(new TaskbarPlugin());
 	application.start();
 	$log.write("E3");
-	
+
 	});
 })(jQuery);
