@@ -1,3 +1,4 @@
+var APPLICATION_PATH = null;
 var $imports = new Array();
 
 function include(component){
@@ -31,6 +32,15 @@ function component_loaded(component){
 		}
 	}
 	return false;
+}
+
+function set_environment_path(path){
+	APPLICATION_PATH = path;
+	init_application();
+}
+function init_application(){
+	require  ("Core.Logger") ;
+	require  ("Core.Model");
 }
 (function($){
 
@@ -69,10 +79,6 @@ function component_loaded(component){
 			});
 		};
 	};
-
 	$bootstrap = new Bootstrap();
-
-	require("Core.Logger");
-	require("Core.Model");
 })(jQuery);
 
