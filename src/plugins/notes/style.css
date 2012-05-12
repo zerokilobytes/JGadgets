@@ -1,19 +1,13 @@
-html, body { 
-    background-color: #cccccc;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    position: relative;
-}
-
 .newbox {
     position: absolute;
     background-color: white;
     height: 200px;
     width: 200px;
-    box-shadow: 10px 10px 10px #888;
+    box-shadow: 5px 5px 5px #888;
     padding: 20px;
     z-index: 1000;
+     border: solid 1px #AAA;
+    border-color: rgba(0, 0, 0, 0.1);
 }
 textarea {
     background: transparent;

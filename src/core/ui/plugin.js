@@ -7,5 +7,8 @@
 var Plugin = $model({
 	type: 'Plugin',
 	init: function(){
+	},
+	show: function(){
+		
 	}
 });
