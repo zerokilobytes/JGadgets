@@ -5,12 +5,13 @@
  */
 
 var Application = function(container, options){
-	var $window = null;
-	var $panel = null;
 	var $this = this;
+	$this.window = null;
+	$this.container = null;
+	
 
 	this.start = function() {
-		
+		$this.window.load();
 	};
 
 	this.close = function() {
@@ -24,38 +25,37 @@ var Application = function(container, options){
 	};
 
 	this.registerComponent = function(component){
+		$this.window.addComponent(component);
 	};
 	
 	this.registerWindow = function(windowPanel){
-		windowPanel.setPanel($panel);
-		$window = windowPanel;
+		windowPanel.setContainer($this.container);
+		$this.window = windowPanel;
 	};
 
 	this.Bootstrap = function (object) {
-		$panel = $(container);
+		this.container = $(container);
 		_render();
-		options.init();
+		if(options){
+			options.init = options.init || function(){};
+		}
 		return $this;
     };
-
-    function attachWindow(windowPanel){
-    	//$this.registerComponent($window);
-    }
 
 	function _register(){
 		
 	}
 	function _render(){
 		$("body").css("overflow", "hidden");
-		$panel.css('background-color', 'green');
-		$panel.width($(window).width());
-		$panel.height($(window).height());
+		//$this.container.css('background-color', 'green');
+		$this.container.width($(window).width());
+		$this.container.height($(window).height());
 		
 		$(window).resize(function() {
-			$panel.width($(window).width());
-			$panel.height($(window).height());
+			$this.container.width($(window).width());
+			$this.container.height($(window).height());
 		});
 	}
-	this.Bootstrap($this);
+	$this.Bootstrap($this);
 	return $this;
 };

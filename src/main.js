@@ -11,16 +11,11 @@
 	require  ("Plugins.Taskbar");
 	require  ("Plugins.Taskbar");
 
-	application = new Application($("#desktop"), {
-			init: function(){
-				//$log.write("Application started!");
-			}
-		}
-	);
+	application = new Application($("#desktop"));
 
 	application.registerWindow(new DesktopPlugin());
-
 	application.registerComponent(new TaskbarPlugin());
+	
 	application.start();
 	$log.write("E3");
 

@@ -42,6 +42,17 @@ function init_application(){
 	require  ("Core.Logger") ;
 	require  ("Core.Model");
 }
+function include_style(style){
+	$('head').append($('<link rel="stylesheet" type="text/css" />').attr('href',  APPLICATION_PATH + "/" + style + uid()));
+}
+function load_file(path, success){
+	$bootstrap.ajax(true, 'GET', APPLICATION_PATH + "/" + path + uid(), null, null, success, null);
+}
+function uid() {
+	var min = 10000;
+	var max = 99999;
+	return "?uid=" + Math.floor(Math.random() * (max - min + 1)) + min + "";
+}
 (function($){
 
 	var Bootstrap = function(){
@@ -67,13 +78,16 @@ function init_application(){
 
 		this.getScript = function(script, callback, async){
 			async = async || false;
+			return this.ajax(async, 'GET', script, null, 'script', null, null);
+		};
+		this.ajax = function(async, type, url, data, dataType, success, error){
 			jQuery.ajax({
 			    async:async,
-			    type:'GET',
-			    url:script,
-			    data:null,
-			    success:callback,
-			    dataType:'script',
+			    type:type,
+			    url:url,
+			    data:data,
+			    success:success,
+			    dataType:dataType,
 			    error: function(xhr, textStatus, errorThrown) {
 			    }
 			});

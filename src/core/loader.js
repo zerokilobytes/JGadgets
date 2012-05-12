@@ -1,5 +1,4 @@
 var Loader = function(){
-	this.$imports = Array();
 	this.loadPlugin = function(){
 	};
 

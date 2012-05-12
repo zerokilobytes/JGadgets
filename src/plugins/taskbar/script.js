@@ -8,5 +8,9 @@ var TaskbarPlugin = $model({
 	extend: Plugin,
 	type: 'TaskbarPlugin',
 	init: function(){
+	},
+	render: function(callback){
+		include_style("plugins/taskbar/style.css");
+		load_file("plugins/taskbar/template.jst", callback);
 	}
 });

@@ -93,6 +93,7 @@
         extend(object.prototype, object.prototype.$super, Model_TYPE_ALL);
       }
       extend(object.prototype, protoType, Model_TYPE_ALL);
+    
       return object;
     }
 

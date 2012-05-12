@@ -1,5 +1,5 @@
 /*!
- * Task plugin file
+ * Desktop plugin file
  * Copyright (C) 2011-2012 Markel Mairs
  * GNU General Public Version 2 License
  */
@@ -7,11 +7,9 @@
 var DesktopPlugin = $model({
 	extend: Window,
 	type: 'DesktopPlugin',
-	$panel : null,
-	setPanel: function(panel){
-		this.$panel = panel;
-	},
-	show : function(){
-		
+	load: function(){
+		var object = this;
+		include_style("plugins/desktop/style.css");
+		this.$panel.addClass("desktopPlugin");
 	}
 });

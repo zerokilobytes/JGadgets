@@ -9,13 +9,13 @@ var Window = $model({
 	$panel: null,
 	init: function(panel){
 	},
-	
-	setPanel: function(panel){
+	addComponent: function(component){
+		var object = this;
+		component.render(function(data){
+			object.$panel.append(data);
+		});
+	},
+	setContainer: function(panel){
 		this.$panel = panel;
-			log.write("Panel loaded!");
-		},
-
-	addChild: function(child){
-		
 	}
 });
