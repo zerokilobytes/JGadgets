@@ -1,4 +1,7 @@
+body    {margin:0}
 .desktopPlugin {
     background-color: eeeeee;
     border: dotted 1px #AAA;
+    height: 100%;
+    padding: 15px 5px 0px 2px;
 }

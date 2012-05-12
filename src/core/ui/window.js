@@ -9,9 +9,9 @@ var Window = $model({
 	$panel: null,
 	init: function(panel){
 	},
-	addComponent: function(component){
+	addPlugin: function(plugin){
 		var object = this;
-		component.render(function(data){
+		plugin.render(function(data){
 			object.$panel.append(data);
 		});
 	},

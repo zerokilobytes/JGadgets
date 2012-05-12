@@ -24,8 +24,8 @@ var Application = function(container, options){
 		return $this;
 	};
 
-	this.registerComponent = function(component){
-		$this.window.addComponent(component);
+	this.registerPlugin = function(plugin){
+		$this.window.addPlugin(plugin);
 	};
 	
 	this.registerWindow = function(windowPanel){
@@ -47,7 +47,7 @@ var Application = function(container, options){
 	}
 	function _render(){
 		$("body").css("overflow", "hidden");
-		//$this.container.css('background-color', 'green');
+		$this.container.css('position', 'relative');
 		$this.container.width($(window).width());
 		$this.container.height($(window).height());
 		

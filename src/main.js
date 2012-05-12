@@ -14,7 +14,7 @@
 	application = new Application($("#desktop"));
 
 	application.registerWindow(new DesktopPlugin());
-	application.registerComponent(new TaskbarPlugin());
+	application.registerPlugin(new TaskbarPlugin());
 	
 	application.start();
 	$log.write("E3");

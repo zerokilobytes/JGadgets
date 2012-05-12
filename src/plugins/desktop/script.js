@@ -10,6 +10,10 @@ var DesktopPlugin = $model({
 	load: function(){
 		var object = this;
 		include_style("plugins/desktop/style.css");
-		this.$panel.addClass("desktopPlugin");
+		this.$panel.addClass("windowPanel");
+		
+		load_file("plugins/desktop/template.jst", function(data){
+			object.$panel.append(data);
+		});
 	}
 });
