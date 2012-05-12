@@ -1,13 +1,15 @@
 .newbox {
     position: absolute;
-    background-color: white;
     height: 200px;
     width: 200px;
-    box-shadow: 5px 5px 5px #888;
-    padding: 20px;
+    box-shadow: 5px 5px 5px 0px #CCCCCC;
+    background-color:#D6F1FC;
     z-index: 1000;
      border: solid 1px #AAA;
     border-color: rgba(0, 0, 0, 0.1);
+}
+.newbox .textArea{
+	padding: 5px 5px 5px;
 }
 textarea {
     background: transparent;
