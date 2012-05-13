@@ -11,6 +11,7 @@ var DesktopPlugin = $model({
 		var object = this;
 		include_style("plugins/desktop/style.css");
 		this.$panel.addClass("windowPanel");
+		//this.$panel.css('background', "url(../src/plugins/desktop/background.jpg)");
 		
 		load_file("plugins/desktop/template.jst", function(data){
 			object.$panel.append(data);

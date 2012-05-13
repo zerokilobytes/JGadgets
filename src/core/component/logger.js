@@ -1,7 +1,16 @@
 
 var Logger = function(){
 	this.write = function(message){
-		console.log(message);
+		try
+		{
+			if(console){
+				console.log(message);
+			}
+		}
+		catch(e){
+			
+		}
+		
 	};
 };
 

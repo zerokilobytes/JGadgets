@@ -6,5 +6,6 @@ body    {margin:0}
     padding: 15px 5px 0px 2px;
 }
 .windowPanel{
-	background-image:url('http://desktopwallpaper-s.com/wallpapers/23/Windows_7_Wallpaper_-_Fish_Tank.jpg');
+	 display: block;
+	background:url('http://desktopwallpaper-s.com/wallpapers/23/Windows_7_Wallpaper_-_Fish_Tank.jpg');
 }

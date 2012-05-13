@@ -21,7 +21,7 @@
 	process.registerPlugin(new TaskbarPlugin());
 	process.registerPlugin(new NotesPlugin());
 	process.registerPlugin(new ShortcutPlugin());
-	
+
 	process.start();
 	$log.write("Process was successfully started.");
 

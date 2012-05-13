@@ -53,45 +53,49 @@ function uid() {
 	var max = 99999;
 	return "?uid=" + Math.floor(Math.random() * (max - min + 1)) + min + "";
 }
-(function($){
-
-	var Kernel = function(){
-		this.init = function(){
-		};
-
-		this.includeScript = function (path, onsuccess, oneror){
-			var scriptUrl = path;
-			var head = document.getElementsByTagName("head")[0];
-			script = document.createElement('script');
-			script.type = 'text/javascript';
-			script.src = scriptUrl;
-
-			script.onload = function(e) {
-				if(oneror){onsuccess(e);};
-			};
-
-			script.onerror = function(e) {
-				if(oneror){oneror(e);};
-			};
-			head.appendChild(script);
-		};
-
-		this.getScript = function(script, callback, async){
-			async = async || false;
-			return this.ajax(async, 'GET', script, null, 'script', null, null);
-		};
-		this.ajax = function(async, type, url, data, dataType, success, error){
-			jQuery.ajax({
-			    async:async,
-			    type:type,
-			    url:url,
-			    data:data,
-			    success:success,
-			    dataType:dataType,
-			    error: function(xhr, textStatus, errorThrown) {
-			    }
-			});
-		};
+var Kernel = function(){
+	this.init = function(){
 	};
-	$kernel = new Kernel();
-})(jQuery);
+
+	this.includeScript = function (path, onsuccess, oneror){
+		var scriptUrl = path;
+		var head = document.getElementsByTagName("head")[0];
+	script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.src = scriptUrl;
+
+	script.onload = function(e) {
+		if(oneror){onsuccess(e);};
+	};
+
+	script.onerror = function(e) {
+		if(oneror){oneror(e);};
+	};
+	head.appendChild(script);
+};
+
+this.getScript = function(script, callback, async){
+	async = async || false;
+	return this.ajax(async, 'GET', script, null, 'script', null, null);
+	};
+	this.ajax = function(async, type, url, data, dataType, success, error){
+		jQuery.ajax({
+		    async:async,
+		    type:type,
+		    url:url,
+		    data:data,
+		    success:success,
+		    dataType:dataType,
+		    error: function(xhr, textStatus, errorThrown) {
+		    }
+		});
+	};
+};
+var ObjectManager = function(){
+};
+var ProcessManager = function(){
+};
+var SecurityManager = function(){
+};
+
+$kernel = new Kernel();
