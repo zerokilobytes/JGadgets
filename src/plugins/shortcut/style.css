@@ -1,0 +1,7 @@
+.shortcutPlugin{
+	width:64px;
+	height:64px;
+	padding: 0px;
+	position: absolute;
+	 z-index: 999;
+}

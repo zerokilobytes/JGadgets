@@ -4,7 +4,7 @@
     width: 200px;
     box-shadow: 5px 5px 5px 0px #CCCCCC;
     background-color:#D6F1FC;
-    z-index: 1000;
+    z-index: 10000;
      border: solid 1px #AAA;
     border-color: rgba(0, 0, 0, 0.1);
 }
