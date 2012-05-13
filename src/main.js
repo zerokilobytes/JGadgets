@@ -1,9 +1,11 @@
 (function($){
-	$.getScript("../src/bootstrap.js", function(){
+	$.getScript("../src/core/kernel.js", function(){
 		
 	set_environment_path("../src");
+	require  ("Bootstrap");
 
-	require  ("Core.Application");
+	require  ("Core.Process");
+
 	require  ("Core.UI.Window");
 	require  ("Core.UI.Plugin");
 	
@@ -13,15 +15,15 @@
 	require  ("Plugins.Notes");
 	require  ("Plugins.Shortcut");
 
-	application = new Application($("#desktop"));
+	process = new Process($("#desktop"));
 
-	application.registerWindow(new DesktopPlugin());
-	application.registerPlugin(new TaskbarPlugin());
-	application.registerPlugin(new NotesPlugin());
-	application.registerPlugin(new ShortcutPlugin());
+	process.registerWindow(new DesktopPlugin());
+	process.registerPlugin(new TaskbarPlugin());
+	process.registerPlugin(new NotesPlugin());
+	process.registerPlugin(new ShortcutPlugin());
 	
-	application.start();
-	$log.write("E3");
+	process.start();
+	$log.write("Process was successfully started.");
 
 	});
 })(jQuery);
