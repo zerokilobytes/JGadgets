@@ -1,6 +1,11 @@
-<div class="shortcutPlugin" style="background-image:url('../src/plugins/desktop/computer.png');background-repeat:no-repeat;background-position:right top;">
+<div class="shortcutPlugin">
+	<div style="width:64px;height:64px;background-image:url('../src/plugins/desktop/computer.png');background-repeat:no-repeat;background-position:right top;">
+	</div>
+	<div style="text-align: center;">Computer</div>
 </div>
 
+
 <script language="javascript" type="text/javascript">
-  $(".shortcutPlugin").draggable({ containment: 'parent', cursor: 'hand'});
+  $(".shortcutPlugin").draggable({ containment: 'parent'});
+  //$(".shortcutPlugin").draggable( "option", "cursor", "pointer" );
 </script>
